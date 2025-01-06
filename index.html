@@ -26,6 +26,8 @@
   <div id="app">
     <h2>DotCode Scanner</h2>
     <button id="startScanBtn">Start Scanning</button>
+    <button id="readFromImageBtn">Read from an Image</button>
+    <input id="fileInput" type="file" style="display:none;"/>
     <div id="status">Loading...</div>
     <div id="cameraView"></div>
     <div id="result"></div>
@@ -42,6 +44,21 @@
         alert("Please wait for the initialization.");
       }
     });
+    document.getElementById("readFromImageBtn").addEventListener("click",function(){
+      if (initialized) {
+        document.getElementById("fileInput").click();
+      }else{
+        alert("Please wait for the initialization.");
+      }
+    });
+    document.getElementById("fileInput").addEventListener("change",async function(){
+      let files = document.getElementById("fileInput").files;
+      if (files.length>0) {
+        let file  = files[0];
+        let result = await cvRouter.capture(file,templateName);
+        displayResults(result);
+      }
+    })
     
     window.onload = function(){
       initBarcodeScanner();
