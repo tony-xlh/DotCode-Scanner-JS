@@ -2,6 +2,9 @@
 
 DotCode is two-dimensional (2D) matrix barcode mainly used in the tobacco industry with advantages like the ability to apply the barcode by high-speed industrial printers and other methods like laser engraving.
 
+![cropped](https://github.com/user-attachments/assets/0789e2c7-4a1d-4895-9afc-a47fc5ae69b8)
+
+
 The demo uses Dynamsoft Barcode Reader to read DotCode in the browser.
 
 [Online demo](https://tony-xlh.github.io/DotCode-Scanner-JS/)
